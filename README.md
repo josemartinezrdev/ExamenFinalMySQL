@@ -1,4 +1,7 @@
-![image-20240705113114051](C:\Users\eliza\AppData\Roaming\Typora\typora-user-images\image-20240705113114051.png)
+# Integrantes
+
+- Elizabeth Perez Valderrama.
+- Jose David Martinez Rincon.
 
 # Consultas sobre una tabla
 
