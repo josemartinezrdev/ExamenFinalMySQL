@@ -595,34 +595,54 @@ FROM oficina;
 
    34. Calcula la fecha del primer y último pago realizado por cada uno de los
        clientes. El listado deberá mostrar el nombre y los apellidos de cada cliente.
+      ```sql
+         SELECT 
+       c.nombre_cliente,
+       c.nombre_contacto,
+       c.apellido_contacto,
+       MIN(p.fecha_pago) AS fecha_primer_pago,
+       MAX(p.fecha_pago) AS fecha_ultimo_pago
+      FROM 
+          cliente c
+      JOIN 
+          pago p ON c.codigo_cliente = p.codigo_cliente
+      GROUP BY 
+          c.codigo_cliente,
+          c.nombre_cliente,
+          c.nombre_contacto,
+          c.apellido_contacto
+      ORDER BY 
+          c.nombre_cliente, 
+          c.apellido_contacto;
+      ```
 
-   35. Calcula el número de productos diferentes que hay en cada uno de los
+   36. Calcula el número de productos diferentes que hay en cada uno de los
        pedidos.
 
-   36. Calcula la suma de la cantidad total de todos los productos que aparecen en
+   37. Calcula la suma de la cantidad total de todos los productos que aparecen en
        cada uno de los pedidos.
 
-   37. Devuelve un listado de los 20 productos más vendidos y el número total de
+   38. Devuelve un listado de los 20 productos más vendidos y el número total de
        unidades que se han vendido de cada uno. El listado deberá estar ordenado
        por el número total de unidades vendidas.
 
-   38. La facturación que ha tenido la empresa en toda la historia, indicando la
+   39. La facturación que ha tenido la empresa en toda la historia, indicando la
        base imponible, el IVA y el total facturado. La base imponible se calcula
        sumando el coste del producto por el número de unidades vendidas de la
        tabla detalle_pedido. El IVA es el 21 % de la base imponible, y el total la
        suma de los dos campos anteriores.
 
-   39. La misma información que en la pregunta anterior, pero agrupada por
+   40. La misma información que en la pregunta anterior, pero agrupada por
        código de producto.
 
-   40. La misma información que en la pregunta anterior, pero agrupada por
+   41. La misma información que en la pregunta anterior, pero agrupada por
        código de producto filtrada por los códigos que empiecen por OR.
 
-   41. Lista las ventas totales de los productos que hayan facturado más de 3000
+   42. Lista las ventas totales de los productos que hayan facturado más de 3000
        euros. Se mostrará el nombre, unidades vendidas, total facturado y total
        facturado con impuestos (21% IVA).
 
-   42. Muestre la suma total de todos los pagos que se realizaron para cada uno
+   43. Muestre la suma total de todos los pagos que se realizaron para cada uno
        de los años que aparecen en la tabla pagos.
 
    # Consultas variadas
